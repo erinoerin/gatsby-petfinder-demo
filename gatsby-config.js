@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: require.resolve(`../gatsby-source-petfinder`),
+      resolve: `gatsby-source-petfinder`,
       options: {
         apiKey: process.env.PETFINDER_API_KEY,
         apiSecret: process.env.PETFINDER_SECRET,

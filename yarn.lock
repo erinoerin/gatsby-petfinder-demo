@@ -5984,6 +5984,13 @@ gatsby-source-filesystem@^2.3.14:
     valid-url "^1.0.9"
     xstate "^4.10.0"
 
+gatsby-source-petfinder@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-petfinder/-/gatsby-source-petfinder-1.0.0.tgz#1c69691c2eb103ac5346719b6eb0c40647b7ea10"
+  integrity sha512-VOK6brYjQEHh7Mqo1WBQntOADLS89mDFeA8P+AOg3F9yX0Q/Ihsq3FwQYbsiyug4btqlkdotJT7NZtGkJwprEw==
+  dependencies:
+    axios "^0.19.2"
+
 gatsby-telemetry@^1.3.14:
   version "1.3.14"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.3.14.tgz#4c53deccbac753e19052ddd50dff818ebaac8575"
