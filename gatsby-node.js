@@ -1,7 +1,47 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const _ = require("lodash");
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
-// You can delete this file if you're not using it
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  return graphql(`
+    {
+      allPetfinderAnimals {
+        edges {
+          node {
+            id
+            type
+            name
+            breeds {
+              primary
+            }
+          }
+        }
+      }
+    }
+  `).then((result) => {
+    if (result.errors) {
+      result.errors.forEach((e) => console.error(e.toString()));
+      return Promise.reject(result.errors);
+    }
+
+    const pageTemplate = path.resolve(`./src/templates/dogpage.js`);
+
+    const allPages = result.data.allPetfinderAnimals.edges;
+    /* const pages =
+      process.env.NODE_ENV === "production"
+        ? getOnlyPublished(allPages)
+        : allPages; */
+
+    _.each(allPages, ({ node: page }) => {
+      createPage({
+        path: `/${page.type}-${page.name}-${page.breeds.primary}/`,
+        component: pageTemplate,
+        context: {
+          id: page.id,
+        },
+      });
+    });
+  });
+};
