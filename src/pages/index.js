@@ -10,6 +10,15 @@ const BlogPosts = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2em;
   row-gap: 2em;
+  max-width: 960px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const AnimalCard = styled.div`
