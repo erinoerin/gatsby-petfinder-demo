@@ -27,6 +27,11 @@ const Main = styled.main`
   justify-content: center;
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 2em;
+
+  @media (max-width: 750px) {
+    padding: 0;
+  }
 `;
 
 const Layout = ({ children }) => {

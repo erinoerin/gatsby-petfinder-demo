@@ -9,7 +9,7 @@ const Footer = styled.footer`
 const FooterContainer = styled.div`
   margin: 0 auto;
   max-width: 960px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 2rem;
   text-align: center;
   color: white;
 
