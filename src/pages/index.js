@@ -1,8 +1,23 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const BlogPosts = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2em;
+  row-gap: 2em;
+`;
+
+const AnimalCard = styled.div`
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-shadow: 5px 5px #888888;
+  padding: 1em;
+`;
 
 export default function Index({ data }) {
   const { edges: posts } = data.allPetfinderAnimals;
@@ -10,20 +25,22 @@ export default function Index({ data }) {
     <Layout>
       <SEO title="Home" />
       <h1>Check out the animals~</h1>
-      <div className="blog-posts">
+      <BlogPosts className="blog-posts">
         {posts.map(({ node: post }) => {
           return (
-            <div>
-              <h1>
+            <AnimalCard>
+              <h2>
                 <Link to={`/${post.type}-${post.name}-${post.breeds.primary}/`}>
                   {post.name}
-                  <img src={post.primary_photo_cropped.small} alt={post.name} />
                 </Link>
-              </h1>
-            </div>
+              </h2>
+              <Link to={`/${post.type}-${post.name}-${post.breeds.primary}/`}>
+                <img src={post.primary_photo_cropped.small} alt={post.name} />
+              </Link>
+            </AnimalCard>
           );
         })}
-      </div>
+      </BlogPosts>
     </Layout>
   );
 }

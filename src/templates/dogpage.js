@@ -74,7 +74,6 @@ export const query = graphql`
         medium
         small
       }
-      tags
       status_changed_at
       contact {
         email

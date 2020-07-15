@@ -28,7 +28,8 @@ module.exports = {
       options: {
         apiKey: process.env.PETFINDER_API_KEY,
         apiSecret: process.env.PETFINDER_SECRET,
-        orgID: "or243",
+        orgID: "or19",
+        /* If no orgID is provider, petfinder will return all animals on petfinder. This is a lot of animals. */
       },
     },
 

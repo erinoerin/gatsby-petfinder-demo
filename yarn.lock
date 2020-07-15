@@ -6233,10 +6233,10 @@ gatsby-source-filesystem@^2.3.14:
     valid-url "^1.0.9"
     xstate "^4.10.0"
 
-gatsby-source-petfinder@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-petfinder/-/gatsby-source-petfinder-1.0.0.tgz#1c69691c2eb103ac5346719b6eb0c40647b7ea10"
-  integrity sha512-VOK6brYjQEHh7Mqo1WBQntOADLS89mDFeA8P+AOg3F9yX0Q/Ihsq3FwQYbsiyug4btqlkdotJT7NZtGkJwprEw==
+gatsby-source-petfinder@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-petfinder/-/gatsby-source-petfinder-1.1.0.tgz#49ba7fb74374a93995f44f1e1e4ffddf388a90c6"
+  integrity sha512-YrdUihdvQLRUJPuVCKr7/Q8cvNcYy20hj/r3zFd0dCfhpjKQBtJb9yg75oQA67mMWKBUEYYKwJhA8GyWQ35baw==
   dependencies:
     axios "^0.19.2"
 
