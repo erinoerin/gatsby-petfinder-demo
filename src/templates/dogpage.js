@@ -1,12 +1,26 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import styled from "styled-components";
+
+const Article = styled.article`
+  img {
+    max-width: 450px;
+    height: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 750px) {
+    padding: 0 2em;
+    max-width: 100vw;
+  }
+`;
 
 export default ({ data }) => {
   const post = data.petfinderAnimals;
   return (
     <Layout>
-      <article>
+      <Article>
         <h1>Hi, I'm {post.name}!</h1>
         <p>
           {post.description}{" "}
@@ -37,7 +51,7 @@ export default ({ data }) => {
         {post.photos.map((photo) => (
           <img key={photo} src={photo.medium} alt={post.name} />
         ))}
-      </article>
+      </Article>
     </Layout>
   );
 };
