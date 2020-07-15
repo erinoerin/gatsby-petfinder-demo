@@ -29,10 +29,6 @@ exports.createPages = ({ actions, graphql }) => {
     const pageTemplate = path.resolve(`./src/templates/dogpage.js`);
 
     const allPages = result.data.allPetfinderAnimals.edges;
-    /* const pages =
-      process.env.NODE_ENV === "production"
-        ? getOnlyPublished(allPages)
-        : allPages; */
 
     _.each(allPages, ({ node: page }) => {
       createPage({

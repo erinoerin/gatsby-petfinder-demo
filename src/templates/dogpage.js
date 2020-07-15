@@ -34,9 +34,9 @@ export default ({ data }) => {
           <li>Good with Kids: {post.environment.children ? "yes" : "no"}</li>
         </ul>
 
-        <img src={post.photos[0].medium} alt={post.name} />
-        <img src={post.photos[1].medium} alt={post.name} />
-        <img src={post.photos[2].medium} alt={post.name} />
+        {post.photos.map((photo) => (
+          <img key={photo} src={photo.medium} alt={post.name} />
+        ))}
       </article>
     </Layout>
   );
@@ -62,6 +62,7 @@ export const query = graphql`
       size
       species
       status
+      tags
       photos {
         full
         large
