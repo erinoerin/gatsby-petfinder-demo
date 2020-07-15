@@ -4,15 +4,16 @@ import Layout from "../components/layout";
 import styled from "styled-components";
 
 const Article = styled.article`
-  img {
-    max-width: 450px;
-    height: auto;
-    width: 100%;
-  }
-
   @media (max-width: 750px) {
     padding: 0 2em;
     max-width: 100vw;
+  }
+  @media (max-width: 500px) {
+    img {
+      max-width: 450px;
+      height: auto;
+      width: 100%;
+    }
   }
 `;
 
